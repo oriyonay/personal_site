@@ -11,16 +11,22 @@
       font-family: 'Inter', sans-serif;
     }
     .image-fade {
-      /* Fades the edges of the image to transparent so it blends into the black background */
-      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 95%);
-      mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 95%);
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+      mask-image:
+        linear-gradient(to right, transparent 0%, #000 14%, #000 86%, transparent 100%),
+        linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      mix-blend-mode: lighten;
     }
   </style>
 </head>
 <body class="bg-black text-white min-h-screen flex items-center justify-center relative overflow-hidden selection:bg-emerald-500 selection:text-white">
   
   <!-- Subtle Background Blurs -->
-  <div class="absolute top-[10%] left-[10%] w-[30rem] h-[30rem] bg-emerald-900/20 rounded-full mix-blend-screen filter blur-[120px] pointer-events-none"></div>
+  <div class="absolute top-[10%] left-[10%] w-[30rem] h-[30rem] bg-emerald-950/20 rounded-full mix-blend-screen filter blur-[120px] pointer-events-none"></div>
   <div class="absolute bottom-[10%] right-[10%] w-[30rem] h-[30rem] bg-blue-900/20 rounded-full mix-blend-screen filter blur-[120px] pointer-events-none"></div>
 
   <!-- Main Container -->
@@ -46,14 +52,14 @@
 
       <div class="relative">
         <p class="text-lg md:text-xl leading-relaxed text-slate-300 font-light max-w-md mx-auto md:mx-0">
-          Deep learning Ph.D student at Texas A&M. Using AI to improve people's lives.
+          Deep learning Ph.D student at Texas A&M. Using AI to save people time.
         </p>
       </div>
 
       <!-- Social Links -->
       <div class="flex justify-center md:justify-start gap-4 pt-2">
-        <a href="vcc.html" class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 text-sm font-medium uppercase tracking-[0.2em] text-emerald-300 transition hover:border-emerald-300 hover:bg-emerald-400/20 hover:text-emerald-200">
-          VCC
+        <a href="https://sites.oriyonay.com" class="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-400/10 px-5 py-2 text-sm font-medium uppercase tracking-[0.2em] text-emerald-300 transition hover:border-emerald-300 hover:bg-emerald-400/20 hover:text-emerald-200">
+          Sites
         </a>
       </div>
 
